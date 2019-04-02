@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>防抖实现</title>
+</head>
+<body>
+
+<button id="countButton">点击</button>
+<script src="debounce.js"></script>
+<script>
+  let countButton = document.getElementById('countButton');
+  function clickFn(event) {
+    console.log('click', event);
+  }
+  countButton.addEventListener('click', debounce(clickFn, 2000));
+</script>
+</body>
+</html>
