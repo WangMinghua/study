@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>深拷贝</title>
+</head>
+<body>
+
+<script src="deepCopy.js"></script>
+<script>
+  let initObj = {
+    'test': 'test value',
+    'testArray': ['testArray1', 'testArray2', 'testArray3'],
+    'testObject': {
+      'testObject1': 'testObject1 value',
+      'testObject2': 'testObject2 value',
+    },
+    'testUndefined': undefined,
+    'testFunction': function () {
+      console.log('testFunction');
+    }
+  };
+
+  /*test1*/
+  // let newObj = initObj;
+
+  /*test2*/
+  /*会丢失json不支持的类型*/
+  // let newObj = JSON.parse(JSON.stringify(initObj));
+
+
+  /*test3*/
+  let newObj = deepCopy(initObj);
+
+  newObj.testArray[0] = 'new testArray1';
+  newObj.testObject.testObject1 = 'new testObject1 value';
+  console.log(initObj);
+  console.log(newObj);
+</script>
+</body>
+</html>
