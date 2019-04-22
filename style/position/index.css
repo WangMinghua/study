@@ -1,0 +1,61 @@
+.parent {
+  background: red;
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+  border: 10px solid green;
+  margin: 200px auto;
+}
+
+.child {
+  background: blue;
+}
+
+
+
+/*标准合模型*/
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  width: 50%; /*220px = (400 + 20 + 20) / 2*/
+  height: 50%; /*170px = (300 + 20 + 20) / 2*/
+  left: 50%; /*220px = (400 + 20 + 20) / 2*/
+  top: 50%; /*170px = (300 + 20 + 20) / 2*/
+}
+
+/*ie合模型*/
+
+/*.parent {
+  position: relative;
+  box-sizing: border-box;
+}
+.child {
+  position: absolute;
+  width: 50%; !*190px = (340 + 20 + 20) / 2*!
+  height: 50%; !*140px = (240 + 20 + 20) / 2*!
+  left: 50%; !*190px = (340 + 20 + 20) / 2*!
+  top: 50%; !*140px = (240 + 20 + 20) / 2*!
+}*/
+
+/*
+* 1.相对定位的父元素，其元素尺寸，如果单位为百分比，则大小为父元素内容和padding的百分比
+* 2.改变父元素的box-sizing，只是改变父元素内容和padding的大小
+*/
+
+
+
+/*
+* 如果元素没有有效的父元素(position为非static)，则元素单位为百分比，其大小是相对于整个视图而言的
+*/
+/*.child {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 50%;
+  top: 50%;
+}*/
+
+
+

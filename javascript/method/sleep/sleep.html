@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sleep 函数</title>
+</head>
+<body>
+
+<script src="sleep.js"></script>
+<script>
+sleep_1(1000).then(() => {
+  console.log('1');
+});
+sleep_2(outFn, 2000);
+function outFn() {
+  console.log('2')
+}
+</script>
+</body>
+</html>
